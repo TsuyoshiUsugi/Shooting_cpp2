@@ -9,6 +9,13 @@
 #include "EnemyPool.h"
 #include "UserInterface.h"
 
+enum class GameState {
+	TITLE,
+	GAME,
+};
+
+GameState current_gamestate = GameState::TITLE;
+
 //------------------------------------------------------------------------------------------------------------
 // ゲーム起動時に１度だけ実行されます
 void gameStart(){
@@ -20,16 +27,27 @@ void gameStart(){
 //------------------------------------------------------------------------------------------------------------
 // 毎フレーム実行されます
 void gameMain(float delta_time) {
-	player.update(delta_time);
-	player.draw();
 
-	enemy_pool.update(delta_time);
-	enemy_pool.draw();
-	
-	bullet_pool.update(delta_time);
-	bullet_pool.draw();
+	switch (current_gamestate)
+	{
+	case GameState::TITLE:
+		break;
+	case GameState::GAME:
+		player.update(delta_time);
+		player.draw();
 
-	user_interface.draw();
+		enemy_pool.update(delta_time);
+		enemy_pool.draw();
+
+		bullet_pool.update(delta_time);
+		bullet_pool.draw();
+
+		user_interface.draw();
+		break;
+
+	default:
+		break;
+	}
 }
 
 //------------------------------------------------------------------------------------------------------------
@@ -37,3 +55,5 @@ void gameMain(float delta_time) {
 void gameEnd() {
 
 }
+
+
