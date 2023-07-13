@@ -3,7 +3,7 @@
 TitleManager title_manager;
 
 void TitleManager::update(float delta_time) {
-	
+	if (tnl::Input::IsKeyDown(eKeys::KB_SPACE)) is_title = true;
 }
 
 void TitleManager::draw() {

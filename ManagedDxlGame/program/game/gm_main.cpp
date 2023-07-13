@@ -35,6 +35,8 @@ void gameMain(float delta_time) {
 		title_manager.update(delta_time);
 		title_manager.draw();
 
+		if (title_manager.get_is_title()) current_gamestate = GameState::GAME;
+
 		break;
 	case GameState::GAME:
 		player.update(delta_time);
