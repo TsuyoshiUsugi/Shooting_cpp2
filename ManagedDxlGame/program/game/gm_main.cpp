@@ -8,6 +8,7 @@
 #include "BulletPool.h"
 #include "EnemyPool.h"
 #include "UserInterface.h"
+#include "TitleManager.h"
 
 enum class GameState {
 	TITLE,
@@ -31,6 +32,9 @@ void gameMain(float delta_time) {
 	switch (current_gamestate)
 	{
 	case GameState::TITLE:
+		title_manager.update(delta_time);
+		title_manager.draw();
+
 		break;
 	case GameState::GAME:
 		player.update(delta_time);

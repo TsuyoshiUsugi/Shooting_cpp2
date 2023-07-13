@@ -172,6 +172,7 @@
     <ClCompile Include="program\game\EnemyPool.cpp" />
     <ClCompile Include="program\game\gm_main.cpp" />
     <ClCompile Include="program\game\Player.cpp" />
+    <ClCompile Include="program\game\TitleManager.cpp" />
     <ClCompile Include="program\game\UserInterface.cpp" />
     <ClCompile Include="program\library\json11.cpp" />
     <ClCompile Include="program\library\tnl_font_texture.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="program\game\EnemyPool.h" />
     <ClInclude Include="program\game\gm_main.h" />
     <ClInclude Include="program\game\Player.h" />
+    <ClInclude Include="program\game\TitleManager.h" />
     <ClInclude Include="program\game\UserInterface.h" />
     <ClInclude Include="program\library\json11.hpp" />
     <ClInclude Include="program\library\stb_image.h" />
