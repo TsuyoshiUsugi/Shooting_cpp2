@@ -1,8 +1,6 @@
 #include "Enemy.h"
 #include "../dxlib_ext/dxlib_ext.h"
 
-Enemy enemy;
-
 void Enemy::update(float delta_time) {
 
 	pos_.y += Enemy::MOVE_SPEED;

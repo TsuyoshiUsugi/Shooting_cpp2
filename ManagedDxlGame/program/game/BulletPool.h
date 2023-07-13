@@ -2,7 +2,9 @@
 #include "../dxlib_ext/dxlib_ext.h"
 #include "Bullet.h"
 
-
+/// <summary>
+/// ’e‚ÌŠÇ—‚ğs‚¤ƒNƒ‰ƒX
+/// </summary>
 class BulletPool {
 public:
 	std::vector<Bullet> current_field_bullet_list = {};

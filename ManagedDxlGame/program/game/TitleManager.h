@@ -3,7 +3,7 @@
 
 class TitleManager {
 	 const std::string TITLE_NAME = "SIMPLE SHOOTING";
-	 const std::string SUBTEXT = "Press Enter";
+	 const std::string SUBTEXT = "Press Space";
 	 tnl::Vector3 title_pos_ = {DXE_WINDOW_WIDTH / 2 - 350, DXE_WINDOW_HEIGHT / 2, 0};
 	 tnl::Vector3 subtext_pos_ = {DXE_WINDOW_WIDTH / 2 - 150, DXE_WINDOW_HEIGHT / 2 + 150, 0};
 	 bool is_title = false;

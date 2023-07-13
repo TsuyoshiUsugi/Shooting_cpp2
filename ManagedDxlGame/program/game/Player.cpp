@@ -1,10 +1,23 @@
 #include "Player.h"
 #include "BulletPool.h"
 #include "EnemyPool.h"
+#include "UserInterface.h"
 
 Player player;
 
 void Player::update(float delta_time) {
+
+	if (player.is_death_)
+	{
+		auto a = 1;
+		if (tnl::Input::IsKeyDown(eKeys::KB_R))
+		{
+			enemy_pool.reset();
+			user_interface.reset();
+			player.is_death_ = false;
+		}
+	}
+
 	if (player.is_death_) return;
 	if (tnl::Input::IsKeyDown(eKeys::KB_LEFT)) pos_.x -= Player::MOVE_SPEED;
 	if (tnl::Input::IsKeyDown(eKeys::KB_RIGHT)) pos_.x += Player::MOVE_SPEED;
@@ -21,6 +34,8 @@ void Player::update(float delta_time) {
 			player.is_death_ = true;
 		}
 	}
+
+	
 }
 
 void Player::draw() {

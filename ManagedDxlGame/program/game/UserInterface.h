@@ -15,6 +15,7 @@ class UserInterface {
 public:
 	void addScore(int point);
 	void draw();
+	void reset();
 };
 
 extern UserInterface user_interface;

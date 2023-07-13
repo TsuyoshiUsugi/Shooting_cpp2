@@ -17,3 +17,7 @@ void UserInterface::draw() {
 		DrawStringEx(gameover_show_pos_.x, gameover_show_pos_.y, -1, "%s", gameover_.c_str());
 	}
 }
+
+void UserInterface::reset() {
+	score_ = 0;
+}

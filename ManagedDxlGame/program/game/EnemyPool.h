@@ -8,6 +8,7 @@ public:
 	void update(float delta_time);
 	void draw();
 	void setup();
+	void reset();
 };
 
 extern EnemyPool enemy_pool;

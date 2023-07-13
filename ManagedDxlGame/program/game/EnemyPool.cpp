@@ -2,6 +2,7 @@
 #include "../dxlib_ext/dxlib_ext.h"
 #include "BulletPool.h"
 #include "UserInterface.h"
+#include "Player.h"
 
 EnemyPool enemy_pool;
 int enemy_num = 10;
@@ -21,8 +22,11 @@ void EnemyPool::update(float delta_time) {
 
 	for (int i = 0; i < enemy_list.size(); i++)		//’e‚Æ“G‚Ì“–‚½‚è”»’è‚ðs‚¤
 	{
+		if (player.get_is_death()) return;
 		for (size_t j = 0; j < bullet_pool.current_field_bullet_list.size(); j++)
 		{
+			if (bullet_pool.current_field_bullet_list[j].state_ == BulletState::STAYING) continue;
+
 			int n = tnl::IsIntersectRectToCorrectPosition(enemy_pool.enemy_list[i].pos_, enemy_pool.enemy_list[i].pos_, enemy_pool.enemy_list[i].SIZE_WIDTH, enemy_pool.enemy_list[i].SIZE_WIDTH,
 				bullet_pool.current_field_bullet_list[j].get_pos_(), bullet_pool.current_field_bullet_list[j].SIZE_WIDTH, bullet_pool.current_field_bullet_list[j].SIZE_HEIGHT);
 
@@ -50,5 +54,12 @@ void EnemyPool::draw() {
 	for (size_t i = 0; i < enemy_list.size(); i++)
 	{
 		enemy_list[i].draw();
+	}
+}
+
+void EnemyPool::reset() {
+	for (size_t i = 0; i < enemy_list.size(); i++)
+	{
+		enemy_list[i].pos_ = {-100, -1000, 0};
 	}
 }
