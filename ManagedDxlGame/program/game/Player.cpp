@@ -22,6 +22,9 @@ void Player::update(float delta_time) {
 	if (tnl::Input::IsKeyDown(eKeys::KB_LEFT)) pos_.x -= Player::MOVE_SPEED;
 	if (tnl::Input::IsKeyDown(eKeys::KB_RIGHT)) pos_.x += Player::MOVE_SPEED;
 
+	if (pos_.x < SIZE_WIDTH / 2) pos_.x = SIZE_WIDTH / 2;
+	if (pos_.x > DXE_WINDOW_WIDTH - SIZE_WIDTH / 2) pos_.x = DXE_WINDOW_WIDTH - SIZE_WIDTH / 2;
+
 	if (tnl::Input::IsKeyDownTrigger(eKeys::KB_SPACE)) Shot();
 
 	for (size_t i = 0; i < enemy_pool.enemy_list.size(); i++)

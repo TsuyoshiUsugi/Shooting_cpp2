@@ -15,6 +15,8 @@ void UserInterface::draw() {
 	if (player.get_is_death()) {
 		SetFontSize(fontsize_ * 2);
 		DrawStringEx(gameover_show_pos_.x, gameover_show_pos_.y, -1, "%s", gameover_.c_str());
+		SetFontSize(fontsize_);
+		DrawStringEx(gameover_help_show_pos_.x, gameover_help_show_pos_.y, -1, "%s", gameover_help_show_.c_str());
 	}
 }
 
